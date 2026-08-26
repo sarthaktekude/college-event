@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Post an event — CampusLive</title>
+<meta name="description" content="Put your college event on the CampusLive board — hackathons, fests, workshops, and more." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header id="site-header"></header>
+
+<main id="main-content">
+  <div class="container page-hero">
+    <h1 id="form-title">Post your event</h1>
+    <p id="form-subtitle">Fill in the details once — every student browsing CampusLive will be able to find it, filter for it, and register.</p>
+  </div>
+
+  <div class="container section" style="padding-top: 24px;">
+    <form class="form-shell" id="post-event-form" novalidate>
+
+      <p class="form-section-title">Event basics</p>
+      <div class="form-grid">
+        <div class="field full">
+          <label for="f-title">Event name *</label>
+          <input type="text" id="f-title" placeholder="e.g. CodeStorm — 24 Hour Hackathon" maxlength="120" />
+          <span class="error"></span>
+        </div>
+        <div class="field">
+          <label for="f-category">Category *</label>
+          <select id="f-category">
+            <option value="">Select a category</option>
+            <option>Hackathon</option>
+            <option>Cultural Fest</option>
+            <option>Tech Symposium</option>
+            <option>Workshop</option>
+            <option>Sports Meet</option>
+            <option>Seminar / Guest Talk</option>
+            <option>Competition</option>
+            <option>Other</option>
+          </select>
+          <span class="error"></span>
+        </div>
+        <div class="field">
+          <label for="f-mode">Mode</label>
+          <select id="f-mode">
+            <option>Offline</option>
+            <option>Online</option>
+            <option>Hybrid</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="f-description">Description *</label>
+          <textarea id="f-description" placeholder="What happens at the event, who can join, tracks/rounds, prizes, and anything students should know." maxlength="1200"></textarea>
+          <span class="hint">Plain text — line breaks are preserved.</span>
+          <span class="error"></span>
+        </div>
+      </div>
+
+      <p class="form-section-title">College & venue</p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-college">College / university *</label>
+          <input type="text" id="f-college" list="college-suggestions" placeholder="e.g. DAV College" />
+          <datalist id="college-suggestions"></datalist>
+          <span class="error"></span>
+        </div>
+        <div class="field">
+          <label for="f-city">City</label>
+          <input type="text" id="f-city" placeholder="e.g. Mumbai" />
+        </div>
+        <div class="field full">
+          <label for="f-venue">Venue</label>
+          <input type="text" id="f-venue" placeholder="e.g. Main Auditorium, North Campus" />
+        </div>
+      </div>
+
+      <p class="form-section-title">Date & entry</p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-date">Event date *</label>
+          <input type="date" id="f-date" />
+          <span class="error"></span>
+        </div>
+        <div class="field">
+          <label for="f-time">Start time</label>
+          <input type="time" id="f-time" />
+        </div>
+        <div class="field">
+          <label for="f-deadline">Registration deadline</label>
+          <input type="date" id="f-deadline" />
+          <span class="error"></span>
+        </div>
+        <div class="field">
+          <label for="f-teamsize">Team size</label>
+          <input type="text" id="f-teamsize" placeholder="e.g. 2–4 members, or Individual" />
+        </div>
+        <div class="field">
+          <label for="f-fee">Entry fee (₹)</label>
+          <input type="number" id="f-fee" min="0" step="1" placeholder="Leave blank if free" />
+          <span class="error"></span>
+        </div>
+        <div class="field">
+          <label for="f-link">Registration link</label>
+          <input type="url" id="f-link" placeholder="https://forms.gle/..." />
+          <span class="error"></span>
+        </div>
+      </div>
+
+      <p class="form-section-title">Organizer contact</p>
+      <div class="form-grid">
+        <div class="field">
+          <label for="f-organizer">Organizer name *</label>
+          <input type="text" id="f-organizer" placeholder="e.g. Priya Nair, Events Committee" />
+          <span class="error"></span>
+        </div>
+        <div class="field">
+          <label for="f-email">Contact email</label>
+          <input type="email" id="f-email" placeholder="events@college.edu" />
+          <span class="error"></span>
+        </div>
+        <div class="field full">
+          <label for="f-phone">Contact phone</label>
+          <input type="tel" id="f-phone" placeholder="+91 90000 00000" />
+        </div>
+      </div>
+
+      <p class="form-section-title">Security</p>
+      <div class="form-grid">
+        <div class="field full" id="passcode-field">
+          <label for="f-passcode">Edit passcode *</label>
+          <input type="password" id="f-passcode" placeholder="Choose a passcode you'll remember" minlength="4" />
+          <span class="hint">You'll need this to edit or remove the event later — CampusLive has no login system, so keep it somewhere safe.</span>
+          <span class="error"></span>
+        </div>
+      </div>
+
+      <div class="callout callout--info">
+        This is a community-run board: anyone can post an event, so please double-check the details before publishing. CampusLive doesn't verify organizers or process payments — always confirm entry fees directly with the college.
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn--accent" id="submit-btn">Publish event</button>
+        <a class="btn btn--ghost" href="events.html">Cancel</a>
+      </div>
+    </form>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/store.js"></script>
+<script src="js/main.js"></script>
+<script src="js/post.js"></script>
+</body>
+</html>
